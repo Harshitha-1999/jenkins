@@ -3,14 +3,14 @@ agent any
 stages{
 stage('build'){
 steps{
- javac file1.java
- javac file2.java
+ sh 'javac file1.java'
+ sh 'javac file2.java'
 }
 }
 stage('run'){
 steps{
- java file1
- java file2
+ sh 'java file1'
+ sh 'java file2'
 }
 }
 }
