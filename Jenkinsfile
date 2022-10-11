@@ -1,12 +1,9 @@
 pipeline{
- agent{
-  docker{
-   image: 'maven:3.8.1-adoptopenjdk-11'
-  }
- }
+agent any
 stages{
 stage('build'){
  steps{
+ sh mvn install
  sh 'mvn -B -DskipTests clean package'
 }
 }
